@@ -56,16 +56,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Expose\Global.cs" />
-    <Compile Include="Expose\IRouteHandler.cs" />
-    <Compile Include="Expose\MvcRouteHandler.cs" />
-    <Compile Include="Expose\RequestContext.cs" />
-    <Compile Include="Expose\Route.cs" />
-    <Compile Include="Expose\RouteBase.cs" />
-    <Compile Include="Expose\RouteData.cs" />
-    <Compile Include="Expose\RouteDictionary.cs" />
-    <Compile Include="Expose\RouteTable.cs" />
-    <Compile Include="Expose\UrlRoutingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
