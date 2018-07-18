@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Monster.OldWeb.Controllers;
+using System;
 using System.Web;
 
 namespace Monster.OldWeb
@@ -9,7 +10,12 @@ namespace Monster.OldWeb
         protected void Application_Start(object sender, EventArgs e)
         {
             RouteTable.Routes.Add("default",
-                new Route { Url = "{controller}/{action}" });
+                new Route { Url = "{controller}/{action}",
+                    //DataTokens = ,
+                    //RouteHandler = 
+                });
+
+            ControllerBuilder.Current.SetControllerFactory(new DefaultControllerFactory());
         }
 
         protected void Session_Start(object sender, EventArgs e)

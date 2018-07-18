@@ -6,10 +6,7 @@ namespace Monster.OldWeb
 {
     public class Route : RouteBase
     {
-        public IRouteHandler RouteHandler { get; set; }
-        /// <summary>
-        /// 路由模板
-        /// </summary>
+        public IRouteHandler RouteHandler { get; set; }        
         public string Url { get; set; }
         public IDictionary<string, object> DataTokens { get; set; }
 

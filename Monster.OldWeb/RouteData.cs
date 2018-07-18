@@ -22,7 +22,7 @@ namespace Monster.OldWeb
             get
             {
                 object controllerName = string.Empty;
-                this.Values.TryGetValue("controller", out controllerName);
+                Values.TryGetValue("controller", out controllerName);
                 return controllerName.ToString();
             }
         }
@@ -32,7 +32,7 @@ namespace Monster.OldWeb
             get
             {
                 object actionName = string.Empty;
-                this.Values.TryGetValue("action", out actionName);
+                Values.TryGetValue("action", out actionName);
                 return actionName.ToString();
             }
         }

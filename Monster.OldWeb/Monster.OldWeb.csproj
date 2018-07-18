@@ -58,10 +58,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actions\ActionExecutor.cs" />
     <Compile Include="Actions\IActionInvoker.cs" />
+    <Compile Include="Binders\DefaultModelBinder.cs" />
     <Compile Include="Binders\IModelBinder.cs" />
     <Compile Include="Controllers\ControllerActionInvoker.cs" />
     <Compile Include="Controllers\ControllerBase.cs" />
@@ -110,7 +114,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>56493</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:56493/</IISUrl>
+          <IISUrl>http://localhost:56493</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>
