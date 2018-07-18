@@ -11,7 +11,7 @@ namespace Monster.OldWeb
         public RouteBase Route { get; set; }
 
         public RouteData()
-        {
+        {            
             Values = new Dictionary<string, object>();
             DataTokens = new Dictionary<string, object>();
             DataTokens.Add("namespaces", new List<string>());
@@ -36,7 +36,5 @@ namespace Monster.OldWeb
                 return actionName.ToString();
             }
         }
-    }
-
-    
+    }    
 }

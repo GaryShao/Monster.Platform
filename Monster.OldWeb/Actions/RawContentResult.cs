@@ -11,7 +11,7 @@ namespace Monster.OldWeb.Actions
             Callback = callback;
         }
 
-        public Action<TextWriter> Callback { get; }
+        public Action<TextWriter> Callback { get; set; }
 
         public override void ExecuteResult(ControllerContext context)
         {

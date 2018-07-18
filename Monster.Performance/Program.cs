@@ -9,7 +9,7 @@ namespace Monster.Performance
     class Program
     {
         static void Main(string[] args)
-        {
+        {            
             var random = new Random();
             var tasks = new List<Task>();
 
