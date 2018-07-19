@@ -5,15 +5,15 @@ namespace Monster.OldWeb
 {
     public class RouteData
     {
-        public IDictionary<string, object> Values { get; private set; }
-        public IDictionary<string, object> DataTokens { get; private set; }
+        public RouteValueDictionary Values { get; private set; }
+        public RouteValueDictionary DataTokens { get; private set; }
         public IRouteHandler RouteHandler { get; set; }
         public RouteBase Route { get; set; }
 
         public RouteData()
         {            
-            Values = new Dictionary<string, object>();
-            DataTokens = new Dictionary<string, object>();
+            Values = new RouteValueDictionary();
+            DataTokens = new RouteValueDictionary();
             DataTokens.Add("namespaces", new List<string>());
         }
 

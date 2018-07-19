@@ -8,7 +8,7 @@ namespace Monster.OldWeb
     {
         public abstract RouteData GetRouteData(HttpContextBase httpContext);
 
-        public abstract VirtualPathData GetVirtualPath(RequestContext requestContext, IDictionary<string, object> values);
+        public abstract VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values);
 
         public bool RouteExistingFiles { get; set; }
     }

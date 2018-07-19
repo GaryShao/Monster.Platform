@@ -1,7 +1,6 @@
 ﻿using Monster.OldWeb.Handlers;
 using Monster.OldWeb.Models;
 using System;
-using System.Collections.Generic;
 using System.Web;
 
 namespace Monster.OldWeb
@@ -10,14 +9,14 @@ namespace Monster.OldWeb
     {
         public IRouteHandler RouteHandler { get; set; }
         public string Url { get; set; }
-        public IDictionary<string, object> DataTokens { get; set; }
-        public IDictionary<string, object> Defaults { get; set; }
-        public IDictionary<string, object> Constraints { get; set; }
+        public RouteValueDictionary DataTokens { get; set; }
+        public RouteValueDictionary Defaults { get; set; }
+        public RouteValueDictionary Constraints { get; set; }
 
 
         public Route()
         {
-            DataTokens = new Dictionary<string, object>();
+            DataTokens = new RouteValueDictionary();
             RouteHandler = new MvcRouteHandler();
         }
 
@@ -27,14 +26,14 @@ namespace Monster.OldWeb
             RouteHandler = routeHandler;
         }
 
-        public Route(string url, IRouteHandler routeHandler, IDictionary<string, object> defaults)
+        public Route(string url, IRouteHandler routeHandler, RouteValueDictionary defaults)
         {
             Url = url;
             RouteHandler = routeHandler;
             Defaults = defaults;
         }
 
-        public Route(string url, IRouteHandler routeHandler, IDictionary<string, object> defaults, IDictionary<string, object> constraints)
+        public Route(string url, IRouteHandler routeHandler, RouteValueDictionary defaults, RouteValueDictionary constraints)
         {
             Url = url;
             RouteHandler = routeHandler;
@@ -42,7 +41,7 @@ namespace Monster.OldWeb
             Constraints = constraints;
         }
 
-        public Route(string url, IRouteHandler routeHandler, IDictionary<string, object> defaults, IDictionary<string, object> constraints, IDictionary<string, object> dataTokens)
+        public Route(string url, IRouteHandler routeHandler, RouteValueDictionary defaults, RouteValueDictionary constraints, RouteValueDictionary dataTokens)
         {
             Url = url;
             RouteHandler = routeHandler;
@@ -54,7 +53,7 @@ namespace Monster.OldWeb
 
         public override RouteData GetRouteData(HttpContextBase httpContext)
         {
-            IDictionary<string, object> variables;
+            RouteValueDictionary variables;
             if (Match(httpContext.Request.AppRelativeCurrentExecutionFilePath.Substring(2), out variables))
             {
                 var routeData = new RouteData();
@@ -72,9 +71,9 @@ namespace Monster.OldWeb
             return null;
         }
 
-        protected bool Match(string requestUrl, out IDictionary<string, object> variables)
+        protected bool Match(string requestUrl, out RouteValueDictionary variables)
         {
-            variables = new Dictionary<string, object>();
+            variables = new RouteValueDictionary();
             string[] realPath = requestUrl.Split('/');
             string[] definedTemplate = Url.Split('/');
             if (realPath.Length != definedTemplate.Length)
@@ -98,7 +97,7 @@ namespace Monster.OldWeb
             return true;
         }
 
-        public override VirtualPathData GetVirtualPath(RequestContext requestContext, IDictionary<string, object> values)
+        public override VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values)
         {
             throw new NotImplementedException();
         }

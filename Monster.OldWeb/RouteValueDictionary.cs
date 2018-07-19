@@ -6,6 +6,11 @@ namespace Monster.OldWeb
 {
     public class RouteValueDictionary : IDictionary<string, object>, ICollection<KeyValuePair<string, object>>, IEnumerable<KeyValuePair<string, object>>, IEnumerable
     {
+        public RouteValueDictionary()
+        {
+            _dictionary = new Dictionary<string, object>(StringComparer.OrdinalIgnoreCase);
+        }
+
         private Dictionary<string, object> _dictionary;
 
         public object this[string key]
@@ -60,9 +65,14 @@ namespace Monster.OldWeb
             ((ICollection<KeyValuePair<string, object>>)_dictionary).CopyTo(array, arrayIndex);
         }
 
-        public IEnumerator<KeyValuePair<string, object>> GetEnumerator()
+        public Dictionary<string, object>.Enumerator GetEnumerator()
         {
-            return (IEnumerator<KeyValuePair<string, object>>)(object)this.GetEnumerator();
+            return _dictionary.GetEnumerator();
+        }
+
+        IEnumerator<KeyValuePair<string, object>> IEnumerable<KeyValuePair<string, object>>.GetEnumerator()
+        {
+            return GetEnumerator();
         }
 
         public bool Remove(string key)
@@ -82,7 +92,7 @@ namespace Monster.OldWeb
 
         IEnumerator IEnumerable.GetEnumerator()
         {
-            return (IEnumerator)(object)this.GetEnumerator();
+            return GetEnumerator();
         }
     }
 }
