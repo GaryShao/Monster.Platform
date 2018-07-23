@@ -10,7 +10,7 @@ namespace Monster.OldWeb.Models
             VirtualPath = virtualPath;
         }
 
-        public IDictionary<string, object> DataTokens { get; }
+        public RouteValueDictionary DataTokens { get; }
         public RouteBase Route { get; set; }
         public string VirtualPath { get; set; }
     }

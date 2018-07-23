@@ -7,12 +7,7 @@ namespace Monster.OldWeb
 {
     public class Route : RouteBase
     {
-        public IRouteHandler RouteHandler { get; set; }
-        public string Url { get; set; }
-        public RouteValueDictionary DataTokens { get; set; }
-        public RouteValueDictionary Defaults { get; set; }
-        public RouteValueDictionary Constraints { get; set; }
-
+        private static readonly string HttpMethodParameterName = "HttpMethod";
 
         public Route()
         {
@@ -50,6 +45,13 @@ namespace Monster.OldWeb
             DataTokens = dataTokens;
         }
 
+
+        public IRouteHandler RouteHandler { get; set; }
+        public string Url { get; set; }
+        public RouteValueDictionary DataTokens { get; set; }
+        public RouteValueDictionary Defaults { get; set; }
+        public RouteValueDictionary Constraints { get; set; }
+        
 
         public override RouteData GetRouteData(HttpContextBase httpContext)
         {

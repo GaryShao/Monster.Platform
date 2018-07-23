@@ -1,5 +1,4 @@
 ﻿using Monster.OldWeb.Models;
-using System.Collections.Generic;
 using System.Web;
 
 namespace Monster.OldWeb
@@ -10,6 +9,6 @@ namespace Monster.OldWeb
 
         public abstract VirtualPathData GetVirtualPath(RequestContext requestContext, RouteValueDictionary values);
 
-        public bool RouteExistingFiles { get; set; }
+        public bool RouteExistingFiles { get; set; } = true;
     }
 }

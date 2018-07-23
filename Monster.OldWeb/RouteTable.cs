@@ -2,7 +2,7 @@
 {
     public class RouteTable
     {
-        public static RouteDictionary Routes { get; private set; }
+        public static RouteDictionary Routes { get; }
 
         static RouteTable()
         {

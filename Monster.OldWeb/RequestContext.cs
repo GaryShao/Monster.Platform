@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System;
+using System.Web;
 
 namespace Monster.OldWeb
 {
@@ -11,6 +12,14 @@ namespace Monster.OldWeb
 
         public RequestContext(HttpContextBase httpContext, RouteData routeData)
         {
+            if (HttpContext == null)
+            {
+                throw new ArgumentNullException("httpContext");
+            }
+            if (routeData == null)
+            {
+                throw new ArgumentException("routeData");
+            }
             HttpContext = httpContext;
             RouteData = RouteData;
         }
