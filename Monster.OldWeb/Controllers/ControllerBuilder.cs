@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Monster.OldWeb.Controllers
 {
@@ -6,6 +7,7 @@ namespace Monster.OldWeb.Controllers
     {
         private Func<IControllerFactory> factoryThunk;
         public static ControllerBuilder Current { get; }
+        public IEnumerable<string> DefaultNamespaces { get; set; }
 
         static ControllerBuilder()
         {

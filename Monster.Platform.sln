@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monster.OldWeb", "Monster.O
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monster.Performance", "Monster.Performance\Monster.Performance.csproj", "{0000D538-2C80-4DC0-A0C5-0D0D9A28A40F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Monster.OutPatientClinic", "Monster.OutPatientClinic\Monster.OutPatientClinic.csproj", "{FD6E0FA6-C14A-4C8E-AB04-C9992D6563DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{0000D538-2C80-4DC0-A0C5-0D0D9A28A40F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0000D538-2C80-4DC0-A0C5-0D0D9A28A40F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0000D538-2C80-4DC0-A0C5-0D0D9A28A40F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD6E0FA6-C14A-4C8E-AB04-C9992D6563DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD6E0FA6-C14A-4C8E-AB04-C9992D6563DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD6E0FA6-C14A-4C8E-AB04-C9992D6563DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD6E0FA6-C14A-4C8E-AB04-C9992D6563DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
